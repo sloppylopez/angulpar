@@ -16,3 +16,5 @@ SOCIAL is the number of GitHub forks & favourites of your project.
 DICTIONARY is a random dictionary word.
 UNIXTIME is the unix time, and
 SEVEN is always the number seven (7).
+
+# info
