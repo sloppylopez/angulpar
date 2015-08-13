@@ -21,6 +21,114 @@
     </p>
   </div>
 
+  <div>
+    <article>
+      <div>
+        <h2>{{::message}}</h2>
+
+        <div>
+          <p>
+            This is the brand new project I am working on lately, started on 23/04/2015, that's 9 weeks from today,
+            it is entirely developed in my spare time, as usual.
+
+          </p>
+
+          <p>
+            It all began with this <a
+            href="http://thepracticalsysadmin.com/running-elk-on-docker/">article</a>.<br/><br/>
+            Was really exciting to see what <a href="https://www.docker.com/">Docker</a> is able to do, ELK stack was
+            quick
+            and easy to build following the tutorial, but soon I though maybe we could do something interesting with the
+            <a
+              href="https://www.elastic.co/">Elastic Search</a>.<br/>
+            So taking some random but useful data, in this case RSS news to persist on the Elastic Search, gave me the
+            need
+            for a Client/Server scenario, therefore it came the <a href="https://angularjs.org/">Angular</a> client
+            and the <a href="https://nodejs.org/">NodeJS</a> API to communicate the back-end docker-based virtual
+            machines
+            with
+            the SPA Angular web client.
+          </p>
+
+          <p>
+            At this point it would be nice if we could automate deployments and test coverage reports, I used to
+            have a website online the last 3 years, it was completely unpleasant to maintain the dev/release cycle
+            adding
+            new features to the website and making releases in my spare time, including testing after the release.
+
+          <p/>
+
+          <p>
+            I promised <a href="http://es.linkedin.com/in/sloppylopez">myself</a> the next project must have a CI-CD
+            cycle, it was very easy to achieve using the
+            wonders of <a href="https://travis-ci.org/sloppylopez/angularclient">Travis</a> mixed up with <a
+            href="https://www.firebase.com/">Firebase</a>
+            <a href="http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service">BaaS</a> features.<br/>
+            If we include <a href="https://github.com/sloppylopez">Github</a> in the process, we have
+            version control
+            in a powerful combination that removes tons of boilerplate work and human failures in all the phases
+            of the dev/release cycle.
+          </p>
+
+          <p>
+            If we add 100% unit test coverage and e2e testing to the mix, topped up with <a
+            href="https://www.npmjs.com/package/istanbul">Istambul</a> test coverage <a
+            href="https://codeclimate.com/github/sloppylopez/angularclient/coverage">reports</a>
+            and <a href="https://codeclimate.com/github/sloppylopez/angularclient">Code Climate</a> quality
+            checks, we find ourselves with a project resistant to human mistakes
+            across the whole cycle of dev/release.
+
+          </p>
+
+          <p>
+            The project is measurable, paired with <a
+            href="http://www.google.com/analytics/ce/mws/?utm_expid=71218119-7.lBgmrTO8R3uEDwsxNxa_Nw.1&utm_referrer=https%3A%2F%2Fwww.google.co.uk%2F">Google
+            Analytics</a> gives the interesting possibility of measuring
+            the business value added for that feature, in that particular pull request.
+            We can measure how affects the performance of the web with tools like <a
+            href="http://gtmetrix.com/reports/sloppylopez.com/oMWRvOfo">GTmetrix</a> and how affects the
+            <a
+              href="https://codeclimate.com/github/sloppylopez/angularclient">quality</a> of code.<br/>
+            if the pull
+            request diminishes the quality, the deployment will not happen and Travis will automatically generate a
+            report.
+          </p>
+
+          <p>
+            After achieving this milestone we can focus on just adding business value to our project,
+            that's <a href="http://en.wikipedia.org/wiki/Agile_management">Agile</a>.<br/>
+            We built a bare bones seed, with the minimum number of features to make the whole stack work,
+            which also is ready for future growth and unavoidable human failures.<br/>
+            We also have a clear and well defined process that anyone can follow and is documented, idempotent,
+            automated and generates reports out-of-the-box.
+          </p>
+
+          <p>
+            This technologies offer corporations the chance to mitigate the need of certain roles and processes,
+            they put a 'start-up' approach over the table since all the members of the team are involved
+            in the dev/release cycle.
+
+          </p>
+
+          <p>
+            Figures like 'Release Manager' as for example become less relevant in the process, the testing phase of
+            the cycle gets partially released of stress as well, in a big corporation this can mean a fair amount of
+            money.
+
+          </p>
+
+          <p>
+            The funny thing is that it possibly took Travis less time to verify if this website works, send a
+            report to Code Climate and deploy the latest code in Firebase than it took you to read this brief
+            introduction
+            to this humble project.
+          </p>
+        </div>
+        <footer><p class="pink"><b>ڪ.</b></p></footer>
+      </div>
+    </article>
+  </div>
+
   <div class="row">
     <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
       <div class="thumbnail">

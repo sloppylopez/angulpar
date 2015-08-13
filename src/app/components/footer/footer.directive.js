@@ -3,7 +3,7 @@
 
   angular
     .module('angulpar')
-    .directive('awefooter', footer);
+    .directive('acmeFooter', footer);
 
   /** @ngInject */
   function footer() {
