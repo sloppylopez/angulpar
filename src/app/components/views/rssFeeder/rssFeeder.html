@@ -1,0 +1,21 @@
+<div>
+  <span>{{::message}}</span>
+
+  <div class="jumbotron">
+    <label for="search">Search</label>
+    <input id="search" type="text" ng-model="queryTerm" placeholder="What are you looking for?"
+           ng-change="rssFeeder(queryTerm)"/>
+  </div>
+
+  <article class="fixrss" ng-repeat="n in news">
+    <div>
+      <h2><a class="small-font" href="{{::n._source.link}}">{{::n._source.title}}</a></h2>
+
+      <p>{{::n._source.pubdate}}</p>
+
+      <div ng-bind-html="n._source.description">
+      </div>
+      <footer><p>{{::n._source.author}}</footer>
+    </div>
+  </article>
+</div>

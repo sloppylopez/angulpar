@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+- 0.12
+sudo: false
+branches:
+  except:
+  - /-job-\d+/
+  only:
+  - master
+before_install:
+install:
+- npm i -g codeclimate-test-reporter bower firebase-tools karma-cli
+- npm i
+- bower install
+before_script:
+script: npm test
+after_script:
+- echo "TRAVIS_PULL_REQUEST ${TRAVIS_PULL_REQUEST}"
+- echo "TRAVIS_BRANCH ${TRAVIS_BRANCH}"
+- codeclimate-test-reporter < coverage/**/lcov.info
+after_success:
+- grunt travis
+- if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then echo -e "${FIREBASE_USER}\n${FIREBASE_PASSWORD}"
+  | firebase login;firebase deploy; fi
+env:
+  global:
+  - secure: ERsI2jV0VEGpOc/olVeyp19nVX6tOirBnQECbx5ERSue2EJh8on8+8WcmEYrusCkHnX7gDAsogFzLD3zGolaXz56ampaH59+GA9aO2EUZKKqbv3yvO4zRKvFkDbpDHu2s7hsh8rNQIcJ/y0wmGyxVYHs8DZO+AwuIELgNKhMidUDhYCX8QRCgdG+zvtZH368Fa1LCyD3JvC4J5DuLfNCsMjQS6uchiM6eEzKCk2nDvWq+6+I+cnm6+QhjkbZ0BaNw5TmksPgcjt4T4X99Y36yG8LvLPzuKuiWGzlWxFc3rBi14seAMdmY0fqIOJb/DCXDGgCymE5YJPF/T1Jng0AAKg2cBjSJQB6uNkKOiIVF6JsLgkLebpB94/cdF41lsH0sKxq0wMx7KBgRaa67hMngfZcCxrBZjM+Wu2F6Czclwa+ZjZ2e3WWp9ZnIeEsc2AM55qvZeb0iz1/pmTIVb3KqsU9GCX0ymK/iZpNIdy9U5xEm6Yl6EjhKPVqZ+hd4grb+nEum2yNsW/bQq2ZFrpJW6mPYkIUJyp4AiH4DsEDhbIAq4YXeiB6Ve5s5FFn+oDnQUDU7l1Gwyee6MxkXD455KOE0+3fcwqZY1v3a1gz5D9B+Sr7Z4oJMisDL04IG0aRRo3UUGs3wBgoO3PpNyrghNP+LDb6NvDqNA6sYw+J/3g=
+  - secure: HHUv/fnmJdazEMW3zdKKuXyapBSin/wYuM4WwAhLntauaHzripYsZKpQhilx9qI4n0PZSy/hrRi/LnfWcwewGw/hKmXZjkzYG8oxzqNoo/tldidZ4nVMlUJmbndnJle4nkLsKgL/USW8cOB3Tm1CN+nuuY7WQxaAPDVgyqiPki5L5s5pRL9wxvU1tof/TgZE8SH1XzYhr92FcbbSed1EMJAuqijceE32a8/6e86jkNCOgbRqDvUxO5a/yGssf45Z97fNdFPa5C/pFZk5sVclpJWkmGWzCS0OsHkahdqiiDO0Wr6WXfzkR2xWwUDOHrJkDpz+KZHKjsSU6z9IJ7sUmMXNtDC6rtFZKzQrXDz7kZ5X1M79dKlXGH7ECihbCoi5msLkXVoX9L57LK78/rHeZk1WSL85ozn2fJlQSoss5yC1x9X38ddCSP+hte44JwK5/Ul42Up6za2dwRg5a+kpS5QVqmDJOZkqGiVTSovcM4BCHS+0V3+zkAHTSsxEGv1N0/sI9wBY0m/Ppu7hmhqtQF7DtrtaZgyC1mxFrps9LLN/e0chmRBu8f1mmCCAXtpaZ99Jp2iDTl6IkXur2Ohi/NMYFpAgC7xaH8dZXuWxJnVOyetGm4qTLhMvvVWE9ynN6ecZtw6BOau6qxnnKkROSYPr1uJxuU78MitbCPezyrU=
+  - secure: pYFc1e6n+I7xDlJlq3Mv+rTBQUwMW9Ga6zXevgxvieI9M8ARQcR1WVdwFq84fkP3Y4cStMym7n6GwlbW6esRw0+sA3KOnJPDaQFeLG8vDfzVe6cBdKc3NRDTIzySGb6PDZuFUwakWsq/osUNTaT3Bu1TCQGp9cJ+iPfa5L1Rrf7CdlExLRUmgSeTbD1eevqpwt8t0yLyJKEAY3FjUFI2xiM6xnBAvN/dKP4vSwK6FS1gdEnSB3bbq+Mk5+c5ODY00/YmC6+D/rE8VAuQBTGbX3LkN6tt5VKKrfv55jvauVwTK6rr31qSdTw+bOrU2D8Z2EnzLMqhJoYP1qi0sZVUKa8XAYuViH2ImayXfTmQUf+grId4yXSZJZrKoQ8J2cQPSPse6vahW6HgAwISsxh0yoI0NsRwSuK2HU6NtOnhw1VoF0cjjOaSTmRdo9FF4CJaE89s0JC8D4S8EbILVj+OGczlQaT23R8fP90KuJ53JpqAEGS9SZMYucl+zlYhkmsEc6RawjTCzjsTrH/1avENgh9mV04r7skBSooMKz5kpRpKXX/t12ajSdGjztpi5HowQz8uT2yONijjS3eQzzFbLrfMI/sTxewMSLsj3O8T8hxpfqexij/fm8Rqk8h4aFch0ASqo/HPIW3vB+QWKN0zNTqFIdvCkUS5kqpOWUIMXy8=

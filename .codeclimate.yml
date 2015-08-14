@@ -1,0 +1,10 @@
+languages:
+  JavaScript: true
+exclude_paths:
+  - ".tmp"
+  - "bower_components"
+  - "dist"
+  - "node_modules"
+  - "coverage"
+  - "config"
+

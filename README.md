@@ -5,6 +5,7 @@ Migrating from angularclient from Grunt to Gulp
 v.1.enthusiastic.0.0.concupiscency.1439499925.7
 
 # versioning
+I am going to use drone-ver until I have something solid that can be considered a real 1.0.0
 http://drone-ver.org/
 
 Given a version number MAJOR.MOOD.ISSUES.SOCIAL.DICTIONARY.UNIXTIME.SEVEN, manage your releases as laid out in this comic :

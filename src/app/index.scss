@@ -14,6 +14,25 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
+body {
+  p {
+    margin: 0 0 10px;
+    font-size: 21px;
+    font-weight: 600;
+  }
+  a {
+    color: #ffa302;
+  }
+  form {
+    width: 50%;
+    margin: 14px auto;
+    padding: 0px;
+  }
+  .caption p {
+    font-size: 13px;
+  }
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -28,6 +47,58 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
     width: 50px;
   }
 }
+
+.container {
+  max-width: 1000px !important;
+  h1 {
+    font: 900 72px/1 'Source Sans Pro', Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(241, 240, 247, 1);
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    letter-spacing: 0px;
+    text-shadow: 0 1px 0 #c9cfce, 0 2px 0 #bcc2c2, 0 3px 0 #afb6b6, 0 4px 0 #a4adac, 0 5px 0 #9fa8a7, 0 6px 0 #99a3a2, 0 7px 0 #97a1a0, 0 8px 0 #949e9d, 0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+  }
+  h2 {
+    font-weight: 800;
+    font-size: 36px;
+  }
+}
+
+/* Fixing scraped rss TODO refactor*/
+.small-font {
+  font-size: 19px;
+}
+
+.fixrss {
+  margin-bottom: 43px;
+}
+
+.fixrss img {
+  margin-right: 7px;
+}
+
+.navcontainer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.form-group {
+  padding-top: 0px;
+  margin-bottom: 28px;
+  height: 80px;
+}
+
+.form-control {
+  height: 43px;
+  background-color: rgb(250, 255, 189);
+  background-image: none;
+  color: rgb(0, 0, 0);
+}
+
+/* Fixing scraped rss TODO refactor*/
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
