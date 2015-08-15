@@ -3,7 +3,7 @@
 
   angular.module('angulpar')
     .service('rssFeederServiceFactory',
-    function (esClientFactory, $q, ES_IP, ES_PORT, ngToast) {
+    function (esClientFactory, $q, ES_IP, ES_PORT/*, ngToast*/) {
       return {
         _query: function (queryTerm) {
           if (queryTerm === '*') {//TODO refactor this crap...
@@ -43,12 +43,13 @@
             deferred.resolve(resp.hits.hits);
           };
         },
-        _errorCallBack: function (deferred, ngToast) {
+        _errorCallBack: function (deferred/*, ngToast*/) {
           return function (err) {
-            ngToast.create({
-              className: 'danger',
-              content: err.message
-            });
+            //ngToast.create({
+            //  className: 'danger',
+            //  content: err.message
+            //});
+            console.log(err);
             deferred.reject(null);
           };
         },
@@ -58,7 +59,7 @@
             .getElasticSearchRef(ES_IP, ES_PORT)
             .search(model._query(queryTerm || '*')).then(
             model._successCallBack(deferred),
-            model._errorCallBack(deferred, ngToast)
+            model._errorCallBack(deferred/*, ngToast*/)
           );
           return deferred.promise;
         }

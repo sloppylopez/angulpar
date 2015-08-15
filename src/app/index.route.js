@@ -3,7 +3,7 @@
 
   angular
     .module('angulpar')
-    .config(routeConfig)
+    .config(routeConfig);
 
   function routeConfig($routeProvider) {
     $routeProvider
@@ -16,6 +16,7 @@
       .when('/rssfeeder', {
         templateUrl: 'app/components/views/rssFeeder/rssFeeder.html',
         controller: 'RssFeederController',
+        controllerAs: 'rssfeeder',
         loginRequired: true
       })
       .when('/authwithpassword', {

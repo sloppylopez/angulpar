@@ -19,16 +19,16 @@
         _resetPasswordCallback: function (def, $rootScope) {
           return function (error) {
             if (error) {
-              $rootScope.ngToast.create({
-                className: 'danger',
-                content: 'Error resetting password:' + error
-              });
+              //$rootScope.ngToast.create({
+              //  className: 'danger',
+              //  content: 'Error resetting password:' + error
+              //});
               def.reject(error);
             } else {
-              $rootScope.ngToast.create({
-                className: 'success',
-                content: 'Password reset email sent successfully!'
-              });
+              //$rootScope.ngToast.create({
+              //  className: 'success',
+              //  content: 'Password reset email sent successfully!'
+              //});
               def.resolve();
             }
           };
@@ -46,16 +46,16 @@
         _authWithPasswordCallBack: function ($rootScope, $scope, def) {
           return function (error, authData) {
             if (error) {
-              $rootScope.ngToast.create({
-                className: 'danger',
-                content: 'Login Failed ' + error
-              });
+              //$rootScope.ngToast.create({
+              //  className: 'danger',
+              //  content: 'Login Failed ' + error
+              //});
               def.reject(error);
             } else {
-              $rootScope.ngToast.create({
-                className: 'success',
-                content: 'Authenticated successfully ' + authData.password.email
-              });
+              //$rootScope.ngToast.create({
+              //  className: 'success',
+              //  content: 'Authenticated successfully ' + authData.password.email
+              //});
               $rootScope.authData = authData;
               def.resolve(authData);
             }
@@ -72,10 +72,10 @@
         _createUserCallBack: function (model, $rootScope, $scope) {
           return function (error, authData) {
             if (error) {
-              $rootScope.ngToast.create({
-                className: 'danger',
-                content: error
-              });
+              //$rootScope.ngToast.create({
+              //  className: 'danger',
+              //  content: error
+              //});
             } else {
               model.resetPassword($scope, $rootScope);
             }
