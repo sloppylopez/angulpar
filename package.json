@@ -57,14 +57,14 @@
     "wrench": "~1.5.8"
   },
   "scripts": {
-    "jshint": "grunt jshint",
+    "jshint": "gulp jshint",
     "test": "karma start --single-run",
-    "build": "grunt build",
+    "build": "gulp build",
     "deploy": [
       "lint",
       "firebase deploy"
     ],
-    "lint": "grunt jshint",
+    "lint": "gulp jshint",
     "validate": "npm ls"
   },
   "engines": {

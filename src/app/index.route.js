@@ -3,7 +3,7 @@
 
   angular
     .module('angulpar')
-    .config(routeConfig);
+    .config(routeConfig)
 
   function routeConfig($routeProvider) {
     $routeProvider
