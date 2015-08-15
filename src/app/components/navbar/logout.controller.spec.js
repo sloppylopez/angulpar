@@ -1,5 +1,5 @@
-'use strict';
 describe('Controller: LogoutCtrl', function () {
+  'use strict';
   var controller, scope, $location, firebaseServiceFactory, $q, $window, def;
 
   beforeEach(module('angulpar'));

@@ -15,6 +15,7 @@
     "module": false
   },
   "predef": [
-    "Firebase"
+    "Firebase",
+    "console"
   ]
 }

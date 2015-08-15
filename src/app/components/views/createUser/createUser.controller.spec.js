@@ -1,5 +1,5 @@
-'use strict';
 describe('Controller: CreateUserCtrl', function () {
+  'use strict';
   var controller, scope, firebaseServiceFactory, $q, def;
 
   beforeEach(module('angulpar'));

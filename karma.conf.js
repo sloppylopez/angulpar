@@ -15,9 +15,6 @@ function listFiles() {
   return wiredep(wiredepOptions).js
     .concat([
       path.join(conf.paths.src, '/app/**/*.module.js'),
-      path.join(conf.paths.src, '/app/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js'), //TODO check a more automatic way of injecting this ones
-      path.join(conf.paths.src, '/app/bower_components/elasticsearch/elasticsearch.js'), //TODO check a more automatic way of injecting this ones
-      path.join(conf.paths.src, '/app/bower_components/elasticsearch/elasticsearch.angular.js'), //TODO check a more automatic way of injecting this ones
       path.join(conf.paths.src, '/app/**/*.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js'),
@@ -117,7 +114,7 @@ module.exports = function (config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     //browsers: ['Chrome', 'PhantomJS', 'Firefox'],
-    browsers: process.env.TRAVIS ? ['PhantomJS'] : ['Chrome', 'Firefox'],
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

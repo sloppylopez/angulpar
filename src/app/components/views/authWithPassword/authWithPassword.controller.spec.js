@@ -1,5 +1,5 @@
-'use strict';
 describe('Controller: authWithPasswordCtrl', function () {
+  'use strict';
   var controller, scope, $rootScope, firebaseServiceFactory, $q, def;
 
   beforeEach(module('angulpar'));

@@ -58,13 +58,9 @@
     "wrench": "~1.5.8"
   },
   "scripts": {
-    "jshint": "gulp scripts",
-    "test": "karma start --single-run",
+    "test": "gulp test",
+    "protractor": "gulp protractor",
     "build": "gulp build",
-    "deploy": [
-      "lint",
-      "firebase deploy"
-    ],
     "lint": "gulp scripts",
     "validate": "npm ls"
   },

@@ -1,5 +1,5 @@
-'use strict';
 describe('Controller: ResetPasswordController', function () {
+  'use strict';
   var controller, scope, $location, firebaseServiceFactory, $q/*, ngToast*/, def;
 
   beforeEach(module('angulpar'));

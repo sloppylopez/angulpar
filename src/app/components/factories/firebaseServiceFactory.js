@@ -16,7 +16,7 @@
           );
           return def.promise;
         },
-        _resetPasswordCallback: function (def, $rootScope) {
+        _resetPasswordCallback: function (def/*, $rootScope*/) {
           return function (error) {
             if (error) {
               //$rootScope.ngToast.create({

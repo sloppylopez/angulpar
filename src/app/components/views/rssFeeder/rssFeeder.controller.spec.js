@@ -1,5 +1,5 @@
-'use strict';
 describe('Controller: RssFeederController', function () {
+  'use strict';
   var controller, scope, rssFeederServiceFactory, $q/*, ngToast*/, def;
 
   beforeEach(module('angulpar'));

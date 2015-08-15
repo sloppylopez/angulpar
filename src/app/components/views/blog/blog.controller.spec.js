@@ -1,7 +1,5 @@
-'use strict';
-
 describe('Controller: BlogController', function () {
-
+  'use strict';
   // load the controller's module
   beforeEach(module('angulpar'));
 
