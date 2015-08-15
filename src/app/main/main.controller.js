@@ -6,13 +6,17 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, $rootScope) {
     var vm = this;
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1439493760565;
     vm.showToastr = showToastr;
+
+    if (typeof $rootScope.showCookieMessage === 'undefined') {
+      $rootScope.showCookieMessage = false;
+    }
 
     activate();
 

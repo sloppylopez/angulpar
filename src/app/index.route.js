@@ -9,7 +9,8 @@
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html',
-        controller: 'BlogController',
+        controller: 'MainController',
+        controllerAs: 'main',
         loginRequired: false
       })
       .when('/rssfeeder', {
