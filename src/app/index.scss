@@ -15,7 +15,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 // endbower
 
 body {
-  background-color: salmon;
+  background-color: #EC7777;
   p {
     margin: 0 0 10px;
     font-size: 17px;
@@ -40,8 +40,16 @@ body {
   }
 
   .error{
-    color: red;
+    color: #ff0;
     margin: 3px 0;
+  }
+
+  .btn-primary {
+    background-color: #1E87E0;
+  }
+  
+  .toast-top-full-width{
+    top: 53px;
   }
 }
 
@@ -74,7 +82,7 @@ body {
   }
   h2 {
     font-weight: 800;
-    font-size: 33px;
+    font-size: 30px;
   }
 }
 
@@ -218,7 +226,6 @@ $speed: 1.5s;
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
     h1 {
       width: 44%;
     }

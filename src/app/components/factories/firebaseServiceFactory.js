@@ -39,6 +39,7 @@
         },
         _authWithPasswordCallBack: function ($rootScope, $scope, def) {
           return function (error, authData) {
+            $scope.showme = false;
             if (error) {
               toastr.error('Login Failed: ' + error);
               def.reject(error);
@@ -47,24 +48,27 @@
               $rootScope.authData = authData;
               def.resolve(authData);
             }
-            $scope.showme = false;
           };
         },
         createUser: function ($scope, $rootScope) {
-          var model = this;
+          var def = $q.defer(), model = this;
           $rootScope.fbRef.createUser({
             email: $scope.user.email,
             password: model._randomizer()
-          }, model._createUserCallBack(model, $rootScope, $scope));
+          }, model._createUserCallBack(model, $rootScope, $scope, def));
+          return def.promise;
         },
-        _createUserCallBack: function (model, $rootScope, $scope) {
+        _createUserCallBack: function (model, $rootScope, $scope, def) {
           return function (error, authData) {
+            $scope.showme = false;
             if (error) {
-              toastr.info(error);
+              toastr.error(error);
+              return def.reject(error);
             } else {
-              model.resetPassword($scope, $rootScope);
+              //TODO check if procedent
+              //model.resetPassword($scope, $rootScope);
+              return def.resolve(authData);
             }
-            return error || authData;
           };
         },
         _randomizer: function () {

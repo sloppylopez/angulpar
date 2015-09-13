@@ -14,10 +14,14 @@
     .controller('CreateUserController', CreateUserController);
 
   /** @ngInject */
-  function CreateUserController($scope, $rootScope, firebaseServiceFactory, toastr) {
+  function CreateUserController($scope, $rootScope, firebaseServiceFactory, toastr, redirectService) {
     $scope.createUser = function (isValid) {
       if (isValid) {
-        firebaseServiceFactory.createUser($scope, $rootScope);
+        $scope.showme = true;
+        firebaseServiceFactory.createUser($scope, $rootScope)
+          .then(function () {
+            redirectService.redirectTo('/');
+          });
       } else {
         toastr.warning('There are still invalid fields');
       }
