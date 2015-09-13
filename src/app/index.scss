@@ -30,8 +30,18 @@ body {
     padding: 0px;
     height: 355px;
   }
+
+  label{
+    font-size: 19px;
+  }
+
   .caption p {
     font-size: 13px;
+  }
+
+  .error{
+    color: red;
+    margin: 3px 0;
   }
 }
 

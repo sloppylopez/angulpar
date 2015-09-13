@@ -6,37 +6,17 @@
     function (esClientFactory, $q, ES_IP, ES_PORT/*, ngToast*/) {
       return {
         _query: function (queryTerm) {
-          if (queryTerm === '*') {//TODO refactor this crap...
-            return {
-              index: '_all',
-              type: 'rss',
-              size: 200,
-              body: {
-                sort: [{
-                  'pubdate': {'order': 'desc'}
-                }],
-                query: {
-                  match_all: {}
-                }
-              }
-            };
-          } else {
-            return {
-              index: '_all',
-              type: 'rss',
-              size: 200,
-              body: {
-                sort: [{
-                  'pubdate': {'order': 'desc'}
-                }],
-                query: {
-                  match: {
-                    title: queryTerm
-                  }
-                }
-              }
-            };
-          }
+          var esQuery = {
+            index: '_all',
+            type: 'rss',
+            size: 200,
+            body: {
+              sort: [{
+                'pubdate': {'order': 'desc'}
+              }]
+            }
+          };
+          esQuery.body.query = queryTerm === '*' ? {match_all: {}} : {match: {title: queryTerm}};
         },
         _successCallBack: function (deferred) {
           return function (resp) {
