@@ -16,7 +16,8 @@ exports.paths = {
   dist: 'dist',
   tmp: '.tmp',
   e2e: 'e2e',
-  bower_components: 'bower_components'
+  bower_components: 'bower_components',
+  fonts: 'src/app/fonts'
 };
 
 /**
@@ -25,7 +26,6 @@ exports.paths = {
  *  to inject css preprocessor deps and js files in karma
  */
 exports.wiredep = {
-  exclude: [/bootstrap.js$/, /bootstrap-sass-official\/.*\.js/, /bootstrap\.css/, /elasticsearch\/.*\.js/],
   directory: 'bower_components'
 };
 

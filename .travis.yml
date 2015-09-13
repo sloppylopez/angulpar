@@ -11,9 +11,9 @@ before_install: npm i -g codeclimate-test-reporter bower firebase-tools karma-cl
 
 install: npm i && bower i
 
-before_script: npm test
+#before_script: npm test
 
-script: npm run protractor
+script: npm test
 
 after_script:
 - echo "TRAVIS_PULL_REQUEST ${TRAVIS_PULL_REQUEST}"

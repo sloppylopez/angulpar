@@ -15,14 +15,14 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 // endbower
 
 body {
-  background-color: salmon;
+  background-color: #EC7777;
   p {
     margin: 0 0 10px;
     font-size: 17px;
     font-weight: 600;
   }
   a {
-    color: #ffa302;
+    color: #fff;
   }
   form {
     width: 50%;
@@ -30,8 +30,26 @@ body {
     padding: 0px;
     height: 355px;
   }
+
+  label{
+    font-size: 19px;
+  }
+
   .caption p {
     font-size: 13px;
+  }
+
+  .error{
+    color: #ff0;
+    margin: 3px 0;
+  }
+
+  .btn-primary {
+    background-color: #1E87E0;
+  }
+  
+  .toast-top-full-width{
+    top: 53px;
   }
 }
 
@@ -51,20 +69,20 @@ body {
 }
 
 .container {
-  max-width: 1000px !important;
+  max-width: 1000px;
   h1 {
     font: 900 53px/1 'Source Sans Pro', Arial, sans-serif;
     text-transform: uppercase;
     color: rgba(241, 240, 247, 1);
     text-align: center;
-    width: 49%;
+    width: 44%;
     margin: 0 auto;
     letter-spacing: 0px;
     text-shadow: 0 1px 0 #c9cfce, 0 2px 0 #bcc2c2, 0 3px 0 #afb6b6, 0 4px 0 #a4adac, 0 5px 0 #9fa8a7, 0 6px 0 #99a3a2, 0 7px 0 #97a1a0, 0 8px 0 #949e9d, 0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
   }
   h2 {
     font-weight: 800;
-    font-size: 33px;
+    font-size: 30px;
   }
 }
 
@@ -100,7 +118,119 @@ body {
   color: rgb(0, 0, 0);
 }
 
-/* Fixing scraped rss TODO refactor*/
+//FONTS
+/* latin */
+@font-face {
+  font-family: 'Cookie';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cookie-Regular'), url(./fonts/crMuSvy3krjox1JAKfe7Ew.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+//CSS SPINNER
+$w: 96px;
+$h: 112px;
+$xspace: $w/2;
+$yspace: $h/4 - 1;
+$speed: 1.5s;
+
+.tetrominos {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+  height: 165px;
+  width: 240px;
+  margin: 0 auto;
+}
+
+.tetromino {
+  width: $w;
+  height: $h;
+  position: absolute;
+  top: 80px;
+  transition: all ease .3s;
+  background: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 684"%3E%3Cpath fill="%23010101" d="M305.7 0L0 170.9v342.3L305.7 684 612 513.2V170.9L305.7 0z"/%3E%3Cpath fill="%23fff" d="M305.7 80.1l-233.6 131 233.6 131 234.2-131-234.2-131"/%3E%3C/svg%3E') no-repeat top center;
+}
+
+.box1 {
+  animation: tetromino1 $speed ease-out infinite;
+}
+
+.box2 {
+  animation: tetromino2 $speed ease-out infinite;
+}
+
+.box3 {
+  animation: tetromino3 $speed ease-out infinite;
+  z-index: 2;
+}
+
+.box4 {
+  animation: tetromino4 $speed ease-out infinite;
+}
+
+@keyframes tetromino1 {
+  0%, 40% {
+    /* compose logo *//* 1 on 3 *//* L-shape */
+    transform: translate(0, 0);
+  }
+  50% {
+    /* pre-box */
+    transform: translate($xspace, -$yspace);
+  }
+  60%, 100% {
+    /* box *//* compose logo */
+    transform: translate($xspace*2, 0);
+  }
+}
+
+@keyframes tetromino2 {
+  0%, 20% {
+    /* compose logo *//* 1 on 3 */
+    transform: translate($xspace*2, 0px);
+  }
+  40%, 100% {
+    /* L-shape *//* box *//* compose logo */
+    transform: translate($xspace*3, $yspace);
+  }
+}
+
+@keyframes tetromino3 {
+  0% {
+    /* compose logo */
+    transform: translate($xspace*3, $yspace);
+  }
+  20%, 60% {
+    /* 1 on 3 *//* L-shape *//* box */
+    transform: translate($xspace*2, $yspace*2);
+  }
+  90%, 100% {
+    /* compose logo */
+    transform: translate($xspace, $yspace);
+  }
+}
+
+@keyframes tetromino4 {
+  0%, 60% {
+    /* compose logo *//* 1 on 3 *//* L-shape *//* box */
+    transform: translate($xspace, $yspace);
+  }
+  90%, 100% {
+    /* compose logo */
+    transform: translate(0, 0);
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    h1 {
+      width: 44%;
+    }
+  }
+}
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject

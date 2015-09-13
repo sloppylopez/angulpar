@@ -19,7 +19,7 @@ describe('rssFeederServiceFactory Spec', function () {
     spyOn(rssFeederServiceFactory, '_errorCallBack').and.callThrough();
     rssFeederServiceFactory.rssFeeder('*');
     rssFeederServiceFactory._successCallBack(def)(resp);
-    rssFeederServiceFactory._errorCallBack(def/*, ngToast*/)(error);
+    rssFeederServiceFactory._errorCallBack(def)(error);
     expect(rssFeederServiceFactory.rssFeeder).toHaveBeenCalled();
     expect(rssFeederServiceFactory._successCallBack).toHaveBeenCalled();
     expect(rssFeederServiceFactory._errorCallBack).toHaveBeenCalled();

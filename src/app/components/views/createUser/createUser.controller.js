@@ -1,5 +1,3 @@
-//'use strict';
-
 /**
  * @ngdoc function
  * @name angulpar.controller:CreateUserController
@@ -7,20 +5,6 @@
  * # CreateUserController
  * Controller of the angulpar
  */
-//angular.module('angulpar')
-//  .controller('CreateUserCtrl',
-//    function ($scope, $rootScope, firebaseServiceFactory) {
-//      $scope.createUser = function (isValid) {
-//        if (isValid) {
-//          firebaseServiceFactory.createUser($scope, $rootScope);
-//        } else {
-//            $rootScope.ngToast.create({
-//                className: 'danger',
-//                content: 'There are still invalid fields'
-//            });
-//        }
-//      };
-//    });
 
 (function () {
   'use strict';
@@ -30,15 +14,16 @@
     .controller('CreateUserController', CreateUserController);
 
   /** @ngInject */
-  function CreateUserController($scope, $rootScope, firebaseServiceFactory) {
+  function CreateUserController($scope, $rootScope, firebaseServiceFactory, toastr, redirectService) {
     $scope.createUser = function (isValid) {
       if (isValid) {
-        firebaseServiceFactory.createUser($scope, $rootScope);
+        $scope.showme = true;
+        firebaseServiceFactory.createUser($scope, $rootScope)
+          .then(function () {
+            redirectService.redirectTo('/');
+          });
       } else {
-        //$rootScope.ngToast.create({
-        //  className: 'danger',
-        //  content: 'There are still invalid fields'
-        //});
+        toastr.warning('There are still invalid fields');
       }
     };
   }

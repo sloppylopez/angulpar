@@ -66,7 +66,7 @@ describe('firebaseServiceFactory Spec', function () {
       spyOn(firebaseServiceFactory, 'createUser').and.callThrough();
       spyOn(firebaseServiceFactory, '_createUserCallBack').and.callThrough();
       firebaseServiceFactory.createUser($scope, $rootScope);
-      firebaseServiceFactory._createUserCallBack(firebaseServiceFactory, $rootScope, $scope)(undefined, authData);
+      firebaseServiceFactory._createUserCallBack(firebaseServiceFactory, $rootScope, $scope, def)(undefined, authData);
       expect(firebaseServiceFactory.createUser).toHaveBeenCalled();
       expect(firebaseServiceFactory._createUserCallBack).toHaveBeenCalled();
     });
@@ -75,7 +75,7 @@ describe('firebaseServiceFactory Spec', function () {
       spyOn(firebaseServiceFactory, 'createUser').and.callThrough();
       spyOn(firebaseServiceFactory, '_createUserCallBack').and.callThrough();
       firebaseServiceFactory.createUser($scope, $rootScope);
-      firebaseServiceFactory._createUserCallBack(firebaseServiceFactory, $rootScope, $scope)(error);
+      firebaseServiceFactory._createUserCallBack(firebaseServiceFactory, $rootScope, $scope, def)(error);
       expect(firebaseServiceFactory.createUser).toHaveBeenCalled();
       expect(firebaseServiceFactory._createUserCallBack).toHaveBeenCalled();
     });

@@ -1,6 +1,6 @@
 {
   "name": "angulpar",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -54,8 +54,8 @@
     "require-dir": "~0.3.0",
     "swagger-js-codegen": "^1.1.4",
     "uglify-save-license": "~0.4.1",
-    "wrench": "~1.5.8",
-    "wiredep": "^3.0.0-beta"
+    "wiredep": "^3.0.0-beta",
+    "wrench": "~1.5.8"
   },
   "scripts": {
     "test": "gulp test",

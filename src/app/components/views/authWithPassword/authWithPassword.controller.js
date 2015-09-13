@@ -1,5 +1,3 @@
-//'use strict';
-
 /**
  * @ngdoc function
  * @name angulpar.controller:AuthWithPasswordController
@@ -7,24 +5,6 @@
  * # AuthWithPasswordController
  * Controller of the angulpar
  */
-//angular.module('angulpar')
-//  .controller('AuthWithPasswordCtrl',
-//    function ($scope, $rootScope, firebaseServiceFactory, redirectService) {
-//      $scope.authWithPassword = function (isValid) {
-//        if (isValid) {
-//          $scope.showme = true;
-//          firebaseServiceFactory.authWithPassword($scope, $rootScope)
-//            .then(function () {
-//              redirectService.redirectTo('/');
-//            });
-//        } else {
-//            $rootScope.ngToast.create({
-//                className: 'danger',
-//                content: 'There are still invalid fields'
-//            });
-//        }
-//      };
-//    });
 
 (function () {
   'use strict';
@@ -34,8 +14,8 @@
     .controller('AuthWithPasswordController', AuthWithPasswordController);
 
   /** @ngInject */
-  function AuthWithPasswordController($scope, $rootScope, firebaseServiceFactory, redirectService) {
-
+  function AuthWithPasswordController($scope, $rootScope, firebaseServiceFactory, redirectService, toastr) {
+    //var vm = this;
     $scope.authWithPassword = function (isValid) {
       if (isValid) {
         $scope.showme = true;
@@ -44,10 +24,7 @@
             redirectService.redirectTo('/');
           });
       } else {
-        //$rootScope.ngToast.create({
-        //  className: 'danger',
-        //  content: 'There are still invalid fields'
-        //});
+        toastr.warning('There are still invalid fields');
       }
     };
   }
