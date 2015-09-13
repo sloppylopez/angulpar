@@ -22,7 +22,7 @@
             redirectService.redirectTo('/login');
           });
       } else {
-        toastr.warning('There are still invalid fields')
+        toastr.warning('There are still invalid fields');
       }
     };
   }

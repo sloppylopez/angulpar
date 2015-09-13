@@ -1,6 +1,5 @@
-'use strict';
 describe('fadeInDirectiveSpec', function () {
-
+  'use strict';
   var element, scope;
   beforeEach(module('angulpar'));
   beforeEach(inject(function ($compile, $rootScope) {

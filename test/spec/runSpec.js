@@ -1,7 +1,5 @@
-'use strict';
-
 describe('Run Spec', function () {
-
+  'use strict';
   var $rootScope, next;
 
   beforeEach(module('angulpar'));

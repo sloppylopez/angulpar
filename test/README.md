@@ -3,7 +3,7 @@
   'describe', 'beforeEach', and 'it' are provided by Mocha for 
   organizing our tests.
   'module' and 'inject' are provided by ngMock. 
-  module registers the ngMock module on our module named 'angularClientApp' 
+  module registers the ngMock module on our module named 'angulpar' 
   without us needing to explicitly include 'ngMock' in the second 
   argument to angular.module. 
   Next we call inject with a function that takes an argument 
