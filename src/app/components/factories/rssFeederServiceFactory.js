@@ -3,33 +3,19 @@
 
   angular.module('angulpar')
     .service('rssFeederServiceFactory',
-    function (esClientFactory, $q, ES_IP, ES_PORT/*, ngToast*/) {
+    function (esClientFactory, $q, ES_IP, ES_PORT, esQuery, toastr) {
       return {
         _query: function (queryTerm) {
-          var esQuery = {
-            index: '_all',
-            type: 'rss',
-            size: 200,
-            body: {
-              sort: [{
-                'pubdate': {'order': 'desc'}
-              }]
-            }
-          };
-          esQuery.body.query = queryTerm === '*' ? {match_all: {}} : {match: {title: queryTerm}};
+          return (esQuery.body.query = queryTerm === '*' ? {match_all: {}} : {match: {title: queryTerm}});
         },
         _successCallBack: function (deferred) {
           return function (resp) {
             deferred.resolve(resp.hits.hits);
           };
         },
-        _errorCallBack: function (deferred/*, ngToast*/) {
+        _errorCallBack: function (deferred) {
           return function (err) {
-            //ngToast.create({
-            //  className: 'danger',
-            //  content: err.message
-            //});
-            console.log(err);//TODO toastr the hell out of this
+            toastr.error(err.message);
             deferred.reject(null);
           };
         },
@@ -39,7 +25,7 @@
             .getElasticSearchRef(ES_IP, ES_PORT)
             .search(model._query(queryTerm || '*')).then(
             model._successCallBack(deferred),
-            model._errorCallBack(deferred/*, ngToast*/)
+            model._errorCallBack(deferred)
           );
           return deferred.promise;
         }

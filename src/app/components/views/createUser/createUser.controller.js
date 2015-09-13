@@ -30,15 +30,12 @@
     .controller('CreateUserController', CreateUserController);
 
   /** @ngInject */
-  function CreateUserController($scope, $rootScope, firebaseServiceFactory) {
+  function CreateUserController($scope, $rootScope, firebaseServiceFactory, toastr) {
     $scope.createUser = function (isValid) {
       if (isValid) {
         firebaseServiceFactory.createUser($scope, $rootScope);
       } else {
-        //$rootScope.ngToast.create({
-        //  className: 'danger',
-        //  content: 'There are still invalid fields'
-        //});
+        toastr.warning('There are still invalid fields');
       }
     };
   }

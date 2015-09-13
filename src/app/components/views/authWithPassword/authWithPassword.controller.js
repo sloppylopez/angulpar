@@ -34,8 +34,8 @@
     .controller('AuthWithPasswordController', AuthWithPasswordController);
 
   /** @ngInject */
-  function AuthWithPasswordController($scope, $rootScope, firebaseServiceFactory, redirectService) {
-
+  function AuthWithPasswordController($scope, $rootScope, firebaseServiceFactory, redirectService, toastr) {
+    //var vm = this;
     $scope.authWithPassword = function (isValid) {
       if (isValid) {
         $scope.showme = true;
@@ -44,10 +44,7 @@
             redirectService.redirectTo('/');
           });
       } else {
-        //$rootScope.ngToast.create({
-        //  className: 'danger',
-        //  content: 'There are still invalid fields'
-        //});
+        toastr.warning('There are still invalid fields');
       }
     };
   }
