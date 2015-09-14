@@ -83,8 +83,8 @@ module.exports = function (config) {
     ],
 
     preprocessors: {
-      'src/**/*.html': ['ng-html2js'],
-      'app/scripts/**/*.js': ['coverage']
+      'src/{,*/}*.html': ['ng-html2js'],
+      'src/app/{,*/}*.js': ['coverage']
     },
 
     // test results reporter to use

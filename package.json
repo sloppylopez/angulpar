@@ -16,7 +16,7 @@
     "gulp-angular-filesort": "^1.1.1",
     "gulp-angular-templatecache": "~1.6.0",
     "gulp-autoprefixer": "~2.3.1",
-    "gulp-csso": "~1.0.0",
+    "gulp-csso": "^1.0.0",
     "gulp-filter": "~2.0.2",
     "gulp-flatten": "~0.0.4",
     "gulp-htmlhint": "^0.3.0",
@@ -42,7 +42,7 @@
     "karma": "~0.12.36",
     "karma-angular-filesort": "~0.1.0",
     "karma-chrome-launcher": "^0.1.10",
-    "karma-coverage": "^0.3.1",
+    "karma-coverage": "^0.5.2",
     "karma-firefox-launcher": "^0.1.5",
     "karma-jasmine": "~0.3.5",
     "karma-ng-html2js-preprocessor": "~0.1.2",
@@ -65,7 +65,7 @@
     "validate": "npm ls"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "pre-commit": [
     "lint",
