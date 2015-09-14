@@ -1,5 +1,6 @@
 # angulpar
-Migrating from angularclient from Grunt to Gulp, benefits:#
+Migrating from angularclient from Grunt to Gulp, benefits:
+
   1)Less code, better organized using 'components' folder and same functionality as original project
   
   2)Gulp builds faster, has the same capabilities than Grunt but with more freedom
