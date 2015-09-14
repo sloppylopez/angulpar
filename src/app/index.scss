@@ -3,6 +3,7 @@
  *  The list of variables are listed here bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss
  */
 $navbar-inverse-link-color: #5AADBB;
+$pinky-color: #FC7878;
 $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 /**
@@ -15,7 +16,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 // endbower
 
 body {
-  background-color: #EF5757;
+  background-color: $pinky-color;
   p {
     margin: 0 0 10px;
     font-size: 17px;
@@ -38,7 +39,7 @@ body {
   .caption p {
     font-size: 13px;
     a {
-      color: #EF5757;
+      color: $pinky-color;
     }
   }
 
@@ -74,7 +75,7 @@ body {
 .container {
   max-width: 1000px;
   h1 {
-    font: 900 60px/1 'Source Sans Pro', Arial, sans-serif;
+    font: 900 59px/1 'Source Sans Pro', Arial, sans-serif;
     text-transform: uppercase;
     color: rgba(241, 240, 247, 1);
     text-align: center;
