@@ -4,6 +4,52 @@
   "ignore": [
     "firebase.json",
     "**/.*",
-    "**/node_modules/**"
+    "**/node_modules/**",
+    "coverage",
+    ".tmp"
+  ],
+  "rules": "config/firebase-rules.json",
+  "headers": [
+    {
+      "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "30000"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "**/*.@(*.js|*.css)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+
+    {
+      "source": "**/*.@(jpg|jpeg|gif|png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "404.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=10000"
+        }
+      ]
+    }
   ]
 }
