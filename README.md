@@ -33,4 +33,5 @@ DICTIONARY is a random dictionary word.
 UNIXTIME is the unix time, and
 SEVEN is always the number seven (7).
 
-# info
+# Link back
+https://github.com/JohnCreek FOr the github nice image used in my footer
