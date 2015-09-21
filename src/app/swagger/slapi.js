@@ -5,7 +5,7 @@ angular.module('', [])
         'use strict';
 
         /**
-         *
+         * 
          * @class slapi
          * @param {(string|object)} [domainOrOptions] - The project domain or options object. If object, see the object's optional properties.
          * @param {string} [domainOrOptions.domain] - The project domain
@@ -16,7 +16,7 @@ angular.module('', [])
         var slapi = (function() {
             function slapi(options, cache) {
                 var domain = (typeof options === 'object') ? options.domain : options;
-              this.domain = typeof(domain) === 'string' ? domain : 'http://localhost:10010/';
+                this.domain = typeof(domain) === 'string' ? domain : 'http://localhost:10010/';
                 if (this.domain.length === 0) {
                     throw new Error('Domain parameter must be specified as a string.');
                 }
@@ -59,24 +59,24 @@ angular.module('', [])
              * @method
              * @name slapi#hello
              * @param {string} name - The name of the person to whom to say hello
-             *
+             * 
              */
-            slapi.prototype.hello = function (parameters) {
+            slapi.prototype.hello = function(parameters) {
                 if (parameters === undefined) {
                     parameters = {};
                 }
                 var deferred = $q.defer();
 
                 var domain = this.domain;
-              var path = '/hello';
+                var path = '/hello';
 
                 var body;
                 var queryParameters = {};
                 var headers = {};
                 var form = {};
 
-              if (parameters['name'] !== undefined) {
-                queryParameters['name'] = parameters['name'];
+                if (parameters['name'] !== undefined) {
+                    queryParameters['name'] = parameters['name'];
                 }
 
                 if (parameters.$queryParameters) {
@@ -129,16 +129,16 @@ angular.module('', [])
              * @method
              * @name slapi#hello2
              * @param {string} name - The name of the person to whom to say hello2
-             *
+             * 
              */
-            slapi.prototype.hello2 = function (parameters) {
+            slapi.prototype.hello2 = function(parameters) {
                 if (parameters === undefined) {
                     parameters = {};
                 }
                 var deferred = $q.defer();
 
                 var domain = this.domain;
-              var path = '/hello2';
+                var path = '/hello2';
 
                 var body;
                 var queryParameters = {};
@@ -146,7 +146,7 @@ angular.module('', [])
                 var form = {};
 
                 if (parameters['name'] !== undefined) {
-                  queryParameters['name'] = parameters['name'];
+                    queryParameters['name'] = parameters['name'];
                 }
 
                 if (parameters.$queryParameters) {

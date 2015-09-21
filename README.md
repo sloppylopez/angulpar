@@ -1,3 +1,8 @@
+[![Code Climate](https://codeclimate.com/github/sloppylopez/angulpar/badges/gpa.svg)](https://codeclimate.com/github/sloppylopez/angulpar)
+[![Travis](https://travis-ci.org/sloppylopez/angulpar.svg)](https://travis-ci.org/sloppylopez/angulpar)
+[![Test Coverage](https://codeclimate.com/github/sloppylopez/angulpar/badges/coverage.svg)](https://codeclimate.com/github/sloppylopez/angulpar/coverage)
+[![built with gulp](https://raw.github.com/cyparu/artwork/master/builtwith.png)](http://gulpjs.com)
+
 # angulpar
 Migrating from angularclient from Grunt to Gulp, benefits:
 
