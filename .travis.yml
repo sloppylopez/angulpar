@@ -19,8 +19,8 @@ after_script:
 - codeclimate-test-reporter < coverage/**/lcov.info
 after_success:
 - gulp build
-- echo "${FIREBASE_TOKEN}"
-- if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then firebase --non-interactive login --token "${FIREBASE_TOKEN}";firebase deploy --token "${FIREBASE_TOKEN}";
+- echo "${FIREBASE_USER}"
+- if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then firebase login --token "${FIREBASE_TOKEN}";firebase deploy --token "${FIREBASE_TOKEN}";
   fi
 env:
   global:
