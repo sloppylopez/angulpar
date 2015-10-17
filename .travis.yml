@@ -20,7 +20,7 @@ after_script:
 after_success:
 - gulp build
 - if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then echo -e "${FIREBASE_USER}\n${FIREBASE_PASSWORD}"
-  | firebase --non-interactive login --token ${FIREBASE_TOKEN};firebase deploy --token ${FIREBASE_TOKEN};
+  | firebase deploy --token "${FIREBASE_TOKEN}";
   fi
 env:
   global:
