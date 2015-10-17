@@ -23,4 +23,7 @@ Migrating from angularclient from Grunt to Gulp, benefits:
   
   7)All js files wrapped with functions to avoid global variables and global use of 'use strict'
   
+# info sources
+https://www.npmjs.com/package/firebase-tools
+  
 
