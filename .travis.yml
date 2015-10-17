@@ -10,6 +10,7 @@ branches:
 before_install:
 - set -e
 - npm i -g codeclimate-test-reporter bower firebase-tools karma-cli gulp
+
 install: npm i && bower i
 script: npm test
 after_script:
@@ -19,7 +20,7 @@ after_script:
 after_success:
 - gulp build
 - if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then echo -e "${FIREBASE_USER}\n${FIREBASE_PASSWORD}"
-  | firebase --non-interative login --token ${FIREBASE_TOKEN};firebase deploy --token ${FIREBASE_TOKEN};
+  | firebase --non-interactive login --token ${FIREBASE_TOKEN};firebase deploy --token ${FIREBASE_TOKEN};
   fi
 env:
   global:
