@@ -97,8 +97,18 @@ gulp.task('other', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
+gulp.task('sitemap', function () {
+  gulp.src('dist/**/*.html')
+      .pipe($.sitemap({
+        siteUrl: 'http://sloppylopez.com'
+      }))
+      .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('clean', function (done) {
   $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')], done);
 });
 
-gulp.task('build', ['html', 'fonts', 'fonts:custom', 'other']);
+gulp.task('build', ['html', 'fonts', 'fonts:custom', 'other'], function () {
+  gulp.start('sitemap');
+});
