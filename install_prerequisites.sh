@@ -2,7 +2,7 @@
 #Pre-requisites
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 #sudo apt-get install -y -qq build-essential TODO check if mandatory
-sudo apt-get install -y -qq nodejs npm wget curl git python graphicsmagick #TODO check if mandatory
+apt-get install -y -qq nodejs npm wget curl git python graphicsmagick #TODO check if mandatory
 
 #Install travis-cli command line to be able to encrypt api_keys in the Travis build
 sudo gem install travis
@@ -17,7 +17,7 @@ travis encrypt FIREBASE_PASSWORD=<YOUR_FIREBASE_PASSWORD> --add
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 #Install npm global dependencies
-sudo npm install -g bower firebase-tools yo gulp-angular karma-cli jshint
+npm install -g bower firebase-tools yo gulp-angular karma-cli jshint
 
 #Check versions of installed dependencies
 nodejs -v
