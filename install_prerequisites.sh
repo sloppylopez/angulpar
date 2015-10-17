@@ -12,7 +12,7 @@ sudo gem install travis
 travis encrypt CODECLIMATE_REPO_TOKEN=<YOUR_CODE_CLIMATE_TOKEN> --add
 travis encrypt FIREBASE_USER=<YOUR_FIREBASE_USER> --add
 travis encrypt FIREBASE_PASSWORD=<YOUR_FIREBASE_PASSWORD> --add
-travis encrypt FIREBASE_TOKEN='-JszhlobDKDwclughrib|9b96b2538a4796c2f61e18041fcdaf48' --add
+travis encrypt FIREBASE_TOKEN=<YOUR_FIREBASE_TOKEN> --add
 
 #Fix for node first install http://stackoverflow.com/questions/21168141/can-not-install-packages-using-node-package-manager-in-ubuntu
 sudo ln -s /usr/bin/nodejs /usr/bin/node
