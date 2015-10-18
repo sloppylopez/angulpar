@@ -70,7 +70,7 @@
     "build": "gulp build",
     "lint": "gulp scripts",
     "validate": "npm ls",
-    "deploy": "gulp clean;gulp;cd dist"
+    "deploy": "gulp clean;gulp"
   },
   "engines": {
     "node": ">=0.12.0"
