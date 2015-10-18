@@ -19,7 +19,7 @@ after_script:
 after_success:
 - gulp build
 - echo $FIREBASE_TOKEN
-- if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then firebase deploy --token '${FIREBASE_TOKEN}';fi
+- if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then firebase deploy --token '-JszhlobDKDwclughrib|f8c2d86e90d6a382ed1859ef9d5d2c9d';fi
 env:
   global:
   - secure: XSljrhmUvtrMGcQva1Ywn4JX913KBcP6KYZiV9+RqooulXi6TyjBbmXluF0284T02/FWUshpfz6+ufncW1NGWY5ajcvlhpa3QWoCxREqYiOp1UP3IMJ+WBlWGhFKruCUlbfzQ5foYp3tdpBbOq3BPUmgxouMLElOEnUMISPBKgVYaEKdS29MWF7Fgr5lswC8KkbWxMjcoO+1qpnkW5mpnd0V64G0e4OZTKX4JTNhhpPSrXK0/FQ0387Qygb7MMxr4HOus5p29qKmnrVPAT92VzBh4nkaNyJXMWn3ot+MjE08RabNp7HwltVUMac9sNWif7/SmJ6l6x3xbRvwU7yoNjovrdMm/hnFdlWsN2Kkz0nZz/B3Wmu1qBM5frX3GpNh3Af5vhKEn480Aop/ZE050yOfwcRHyqwmoBy9PETiQrV32RoRxjTZ3po6/EsWJIl94dSrYZz8AWvgp8/YPlrOV0HwOY0fr00jrd+NuOQklRFahBH1rQm3UKALFQqF7ydh/dXj91sFkpvPbpkGiNAwfYFXaMOy3NOPBtKtm8YY/IY7gLQ7fuFg/hTBbtVhz/BIuqBpdKrN88p1CcGRAdSPf3QlkCFUeayS1n5a7u24il4f/rHzH8UJjworAVhcN1EyKYlLVLgx6yRk36mcHvmsblhz1AdzHWgAilQ7FYFG9+Y=
