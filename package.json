@@ -80,5 +80,7 @@
     "validate",
     "test"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "firebase-tools": "^2.0.1"
+  }
 }

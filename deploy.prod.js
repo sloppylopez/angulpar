@@ -1,16 +1,14 @@
 var client = require('firebase-tools');
-client.list().then(function (data) {
-    console.log(data);
-}).catch(function (err) {
-    // handle error
-});
 
-client.deploy.rules({
-    firebase: 'myfirebase',
+client.deploy({
+    firebase: 'sloppy',
     token: process.env.FIREBASE_TOKEN,
-    cwd: '/path/to/project/folder'
+    cwd: '.'
 }).then(function () {
-    console.log('Rules have been deployed!')
+    console.log('Angulpar has been deployed in production!');
+    process.exit(0);
 }).catch(function (err) {
     // handle error
+    console.log(err);
+    process.exit(1);
 });
