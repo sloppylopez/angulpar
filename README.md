@@ -25,5 +25,6 @@ Migrating from angularclient from Grunt to Gulp, benefits:
   
 # info sources
 https://www.npmjs.com/package/firebase-tools
+http://docs.travis-ci.com/user/encryption-keys/
   
 
