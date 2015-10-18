@@ -1,7 +1,5 @@
 var client = require('firebase-tools');
 
-console.log(process.env.FIREBASE_TOKEN);
-
 client.login({
     email: process.env.FIREBASE_USER,
     password: process.env.FIREBASE_PASSWORD
