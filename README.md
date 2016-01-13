@@ -28,3 +28,7 @@ https://www.npmjs.com/package/firebase-tools
 http://docs.travis-ci.com/user/encryption-keys/
   
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sloppylopez/angulpar/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
